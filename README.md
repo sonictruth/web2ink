@@ -1,10 +1,11 @@
 # Web2Ink
 
-This node.js service can be used to display webpages on EDP ink devices.
+This node.js service can be used to display webpages on e-paper/ink display devices.
 
-The service captures screenshots of a webpage and converts them into compact 8bpp BMPs using dithering and a customizable color palette.
+The service captures a screenshot of a webpage and converts it into a compact 8bpp BMP using customizable dithering and a customizable color palette.
 
-This can be useful if the EDP device is driven by a device with small memory like a ESP32. 
+This can be useful if the display is driven by a device less powerfull, such as an ESP32, as opposed to a Raspberry Pi.
+
 By default, the color palette is Black, White, Red.
 
 Example:
