@@ -2,10 +2,11 @@ import { Request, Response } from 'express';
 import puppeteer from 'puppeteer';
 import { PNG } from 'pngjs';
 import { buildPaletteSync, applyPaletteSync, utils } from 'image-q';
-import { BmpEncoder } from './encoder';
+import { BmpEncoder } from '../utils/bmpEncoder';
 
+// Format: [RGBA, RGBA ...]
 const customPaletteRedBlackWhite = [
-  255, 0, 0, 0, // RGBA
+  255, 0, 0, 0, 
   0, 0, 0, 0,
   255, 255, 255, 0
 ];
