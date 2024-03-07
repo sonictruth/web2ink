@@ -270,7 +270,6 @@ export class BmpEncoder implements IImage {
 
     private bit8() {
         const colors = this.initColors(8);
-        console.log(colors);
         this.writeImage((p, index) => {
             let i = index;
 
@@ -360,7 +359,6 @@ export class BmpEncoder implements IImage {
                 const rootColor = createColor(this.palette[i]);
                 this.writeUInt32LE(rootColor);
                 colors.push(rootColor);
-                console.log('push', rootColor)
             }
         } else {
             throw new Error(

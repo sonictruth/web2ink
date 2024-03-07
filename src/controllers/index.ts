@@ -17,7 +17,7 @@ class IndexController {
       product: 'chrome',
     });
     const width = req.query.width ? parseInt(req.query.width as string) : 800;
-    const height = req.query.width ? parseInt(req.query.width as string) : 480;
+    const height = req.query.height ? parseInt(req.query.height as string) : 480;
     const url = req.query.url ? req.query.url as string : `https://picsum.photos/${width}/${height}`;
     const page = await browser.newPage();
     await page.setViewport({ width, height });
