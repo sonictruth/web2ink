@@ -9,9 +9,8 @@ This can be useful if the display is driven by a device less powerful, such as a
 
 Data from sensors, such as temperature, can be sent to the target page via URL to be rendered in HTML.
 
-
-
 By default, the color palette is Black, White, Red.
+The color can be matched to your display and can support up to 255 colors.
 
 Example:
 http://127.0.0.1:3000/?auth=changeme&url=http://127.0.0.1:3000/test/
