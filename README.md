@@ -13,7 +13,7 @@ Essentially, you can consider this as an HTML rendering service for microcontrol
 By default, the color palette is Black, White, Red.
 
 Example:
-http://127.0.0.1:3000/?auth=changeme&width=600&height=400&url=http://www.example.com
+http://127.0.0.1:3000/?auth=changeme&url=http://127.0.0.1:3000/test/
 
 
 <img src="screen.png">

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI Test</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-color: red;
+            font-family: Arial, sans-serif;
+            image-rendering: pixelated;
+        }
+
+        .view {
+            width: 800px;
+            height: 480px;
+            background-color: red;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            box-sizing: border-box;
+            border: 10px solid red;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .text {
+            font-smooth: never;
+            background-color: white;
+            border-radius: 25px;
+            border: 10px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="view">
+        <div class="box">
+            <div class="text">
+                <h1>H1 Test</h1>
+                <h2>H2 Test</h2>
+                <h3>H3 Test</h3>
+                <h4>H4 Test</h4>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

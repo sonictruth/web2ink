@@ -1,10 +1,13 @@
 import express, { Request, Response } from 'express';
 import { setRoutes } from './routes';
 import { ErrorRequestHandler, NextFunction } from 'express';
+import path from 'path';
 
 const app = express();
 const port = process.env.PORT || 3000;
 const auth = process.env.AUTH || 'changeme';
+
+app.use(express.static(path.join(__dirname, '../static')));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   if(req.query.auth !== auth) {
@@ -14,7 +17,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+
 app.use(express.json());
+
 
 setRoutes(app);
 
