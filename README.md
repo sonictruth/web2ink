@@ -1,4 +1,4 @@
-# Web2Ink
+# Web2Ink - Paper Portals
 
 This node.js service can be used to display webpages on e-paper/ink display devices.
 Essentially, you can consider this as an HTML rendering service for microcontrollers.
