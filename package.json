@@ -1,7 +1,7 @@
 {
-  "name": "my-express-app",
+  "name": "web2ink",
   "version": "1.0.0",
-  "description": "My Express App",
+  "description": "Web2Ink - Paper Portals",
   "main": "src/app.ts",
   "scripts": {
     "build": "npx tsc",
@@ -12,7 +12,7 @@
     "express",
     "typescript"
   ],
-  "author": "Your Name",
+  "author": "Alexandru Constantin",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
