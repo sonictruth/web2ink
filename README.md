@@ -16,5 +16,5 @@ By default, the color palette is Black, White, Red.
 Example:
 http://127.0.0.1:3000/?auth=changeme&url=http://127.0.0.1:3000/test/
 
-
-<img src="screen2.png">
+(Remember to use  -webkit-font-smoothing: none; to disable font anti-aliasing)
+<img src="screen3.png">
