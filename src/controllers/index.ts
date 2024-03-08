@@ -29,8 +29,8 @@ class IndexController {
   async getIndex(req: Request, res: Response, next: any) {
     try {
       const browser = await puppeteer.launch({
+        args: ['--no-sandbox'], 
         headless: true,
-        product: 'chrome',
       });
       const width = req.query.width ? parseInt(req.query.width as string) : 800;
       const height = req.query.height ? parseInt(req.query.height as string) : 480;
