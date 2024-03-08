@@ -17,4 +17,4 @@ Example:
 http://127.0.0.1:3000/?auth=changeme&url=http://127.0.0.1:3000/test/
 
 
-<img src="screen.png">
+<img src="screen2.png">
