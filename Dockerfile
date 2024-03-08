@@ -16,10 +16,10 @@ COPY --chown=node package-lock.json .
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium
 
+COPY --chown=node . .
 RUN npm install
 RUN npm run build
 
-COPY --chown=node . .
 
 EXPOSE 3000
 
