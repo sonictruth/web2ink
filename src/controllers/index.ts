@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import puppeteer from 'puppeteer';
+import puppeteer, { Browser } from 'puppeteer';
 import { PNG } from 'pngjs';
 import { buildPaletteSync, applyPaletteSync, utils } from 'image-q';
 import { BmpEncoder } from '../utils/bmpEncoder';
@@ -26,12 +26,20 @@ const customPalettes = [
 ]
 
 class IndexController {
-  async getIndex(req: Request, res: Response, next: any) {
-    try {
-      const browser = await puppeteer.launch({
-        args: ['--no-sandbox'], 
+  browser: Browser | null = null;
+  async getBrowser() {
+    if (!this.browser) {
+      this.browser = await puppeteer.launch({
+        args: ['--no-sandbox'],
         headless: true,
       });
+    };
+    return this.browser;
+  }
+  async getIndex(req: Request, res: Response, next: any) {
+
+    try {
+      const browser = await this.getBrowser();
       const width = req.query.width ? parseInt(req.query.width as string) : 800;
       const height = req.query.height ? parseInt(req.query.height as string) : 480;
       const paletteIndex = req.query.palette ? parseInt(req.query.palette as string) : 0;
@@ -43,8 +51,7 @@ class IndexController {
       await page.goto(url);
 
       const screenshot = await page.screenshot();
-
-      await browser.close();
+      await page.close();
 
       const meta = PNG.sync.read(screenshot);
 
@@ -119,6 +126,11 @@ class IndexController {
       res.setHeader('Content-Type', 'image/bmp');
       res.send(newBMP.data);
     } catch (error) {
+      console.log(error);
+      if (this.browser) {
+        this.browser.close();
+        this.browser = null;
+      }
       next(error);
     }
   }
