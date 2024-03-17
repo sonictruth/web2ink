@@ -119,9 +119,6 @@ class IndexController {
           bmpPalette.push({ red: 0, green: 0, blue: 0, quad: 0 });
         }
       }
-
-      console.log(bmpPalette.length)
-
       const newBMP = new BmpEncoder({
         data: outArrayABGR,
         width: outPointContainer.getWidth(),
