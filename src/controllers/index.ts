@@ -112,11 +112,21 @@ class IndexController {
         outArrayABGR[i + 3] = color.red;
       }
 
+      if(bmpPalette.length > 16) {
+        throw new Error('Palette has more than 16 colors');
+      } else {
+        for (let i = bmpPalette.length; i < 16; i++) {
+          bmpPalette.push({ red: 0, green: 0, blue: 0, quad: 0 });
+        }
+      }
+
+      console.log(bmpPalette.length)
+
       const newBMP = new BmpEncoder({
         data: outArrayABGR,
         width: outPointContainer.getWidth(),
         height: outPointContainer.getHeight(),
-        bitPP: 8,
+        bitPP: 4,
         colors: bmpPalette.length,
         palette: bmpPalette
       });
