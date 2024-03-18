@@ -36,7 +36,7 @@ declare interface IImage {
     height: number;
     planes?: number;
     bitPP: number;
-    compression?: Compression;
+    compression?: Compression.NONE;
     rawSize: number;
     hr?: number;
     vr?: number;
@@ -100,11 +100,9 @@ export class BmpEncoder implements IImage {
         this.compress = 0;
         this.hr = imgData.hr || 0;
         this.vr = imgData.vr || 0;
-        this.importantColors = imgData.importantColors || 0;
-        this.colors = Math.min(
-            2 ** (this.bitPP - 1 || 1),
-            imgData.colors || Infinity
-        );
+        this.importantColors = imgData.colors  || 0;
+        this.colors = imgData.colors || Infinity;
+
         this.palette = imgData.palette || [];
 
         if (this.colors && this.bitPP < 16) {
@@ -139,11 +137,10 @@ export class BmpEncoder implements IImage {
 
         this.extraBytes = (rowBytes - rowWidth) * 4;
         // Why 2?
-        this.rawSize = this.height * rowBytes * 4 + 2;
+        this.rawSize = this.height * rowBytes * 4; // + 2;
         this.fileSize = this.rawSize + this.offset;
         this.data = Buffer.alloc(this.fileSize, 0x1);
         this.pos = 0;
-
         this.encode();
     }
 

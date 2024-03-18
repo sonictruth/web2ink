@@ -125,7 +125,7 @@ class IndexController {
         height: outPointContainer.getHeight(),
         bitPP: 4,
         colors: bmpPalette.length,
-        palette: bmpPalette
+        palette: bmpPalette,
       });
 
       newBMP.encode();
