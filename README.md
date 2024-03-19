@@ -12,8 +12,13 @@ Data from sensors, such as temperature, can be sent to the target page via URL t
 By default, the color palette is Black, White, Red.
 The color can be matched to your display and can support up to 255 colors.
 
-Example:
-http://127.0.0.1:3000/?auth=changeme&url=http://127.0.0.1:3000/test/
+Use "-webkit-font-smoothing: none;" in your webpages to disable font anti-aliasing for sharper rendering.
 
-(Remember to use  -webkit-font-smoothing: none; to disable font anti-aliasing)
+Example of calling the web service:
+http://myserver:3000/?auth=changeme&url=http://myserver:3000/test/
+
+Here is an example of the 800x480 Red, Black, and White ePaper frame, driven by Waveshare ESP32, displaying random photos from Google Photos:
+
+<img src="frame.jpg">
+
 <img src="screen3.png">
