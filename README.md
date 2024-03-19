@@ -17,7 +17,8 @@ Use "-webkit-font-smoothing: none;" in your webpages to disable font anti-aliasi
 Example of calling the web service:
 http://myserver:3000/?auth=changeme&url=http://myserver:3000/test/
 
-Here is an example of the 800x480 Red, Black, and White ePaper frame, driven by Waveshare ESP32, displaying random photos from Google Photos:
+Here is an example of an 800x480 Red, Black, and White ePaper frame, driven by Waveshare ESP32. It calls the service using an HTTP call and displays the results using
+[GxEPD2](https://github.com/ZinggJM/GxEPD2) driver:
 
 <img src="frame.jpg">
 
